@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# You can use read to receive input which is stored in name
+# The p option says that we want to prompt with a string
+
+read -p "how old are you? " age
+
+# You place your condition with in []
+# Include a space after [ and before ]
+# Integer Comparisons: eq, ne, le, lt, ge, gt
+
+if [ $age -ge 16 ]
+then
+		echo "You can drive"
+		
+elif [ $age -eq 15 ]
+then	
+		echo "You can drive next year"
+else
+		echo "You can't drive"
+fi
+
+########################################
+
+read -p "Enter a number : " num
+ 	
+if ((num == 10)); then
+		echo "Your number equals 10"
+fi
+					 	
+if ((num > 10)); then
+	 		echo "It is greater then 10"
+else
+			echo "It is less then 10"
+fi
+													 	
+if (( ((num % 2)) == 0 )); then
+		 		echo " It is even"
+fi
+
+#########################################
+
+# You can use logical operators like &&, || and !
+if (( ((num > 0)) && ((num < 11)) )); then
+		echo "$num is between 1 and 10"
+fi			 	
+# && and || can be used as control structures
+
+
+# Create a file and then if that worked open it in Vim
+touch samp_file && vim samp_file
+
+# If samp_dir doesn't exist make it
+[ -d samp_dir ] || mkdir samp_dir
+
+# Delete file rm samp_file
+	# Delete directory rmdir samp_dir
+

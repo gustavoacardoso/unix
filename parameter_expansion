@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Parameter expansion allows you to do this
+name="Gustavo"
+echo "${name}'s Toy"
+
+# The search and replace allows this
+samp_string="The dog climbed the tree"
+echo "${samp_string//dog/cat}"
+
+# You can assign a default value if it doesn't exist
+echo "I am ${name:-Gustavo}"
+
+# This uses the default if it doesn't exist and assigns the vale to the variable
+echo "I am ${name:=John}"
+echo $name

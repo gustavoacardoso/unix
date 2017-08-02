@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Hide the input with the s code
+read -sp "Enter the Secret Code" secret
+		
+if [ "$secret" == "password" ]; then
+		echo "Enter"
+else
+		echo "Wrong Password"
+fi

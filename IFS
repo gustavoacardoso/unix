@@ -1,0 +1,23 @@
+#You can set what separates the values with IFS
+
+#!/bin/bash
+		
+# Store the original value of IFS
+OIFS="$IFS"
+					
+# Set what separates the input values
+IFS=","
+								
+read -p "Enter 2 numbers to add separated by a comma: " num1 num2
+										
+# Use the parameter expansion ${} to also substitute any whitespace
+# with nothing
+num1=${num1//[[:blank:]]/}
+num2=${num2//[[:blank:]]/}
+
+sum=$((num1+num2))
+																
+echo "$num1 + $num2 = $sum"
+
+# Reset IFS to the original value
+IFS="$OIFS"
